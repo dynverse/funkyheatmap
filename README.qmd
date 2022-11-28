@@ -1,10 +1,9 @@
 ---
-output: github_document
-editor_options: 
-  chunk_output_type: console
+format: gfm
+engine: knitr
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md is generated from README.qmd. Please edit that file -->
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -29,10 +28,10 @@ or grouping rows and columns together in categories.
 
 ## Installation
 
-You can install the development version of funkyheatmap like so:
+You can install funkyheatmap like so:
 
 ``` r
-devtools::install_github("dynverse/funkyheatmap")
+install.packages("funkyheatmap")
 ```
 
 You can also download `funkyheatmap` as a [standalone executable](http://funkyheatmap.dynverse.org/articles/executable.html) 
@@ -42,6 +41,17 @@ or a [Nextflow pipeline](http://funkyheatmap.dynverse.org/articles/nextflow.html
 
 Let's use the `mtcars` dataset as an example of what a funky heatmap looks like.
 
+:::{.panel-tabset}
+
+## `mtcars` dataset
+
+```{r}
+#| echo: false
+data("mtcars")
+knitr::kable(mtcars)
+```
+
+## Code
 ```{r example}
 library(funkyheatmap)
 library(dplyr, warn.conflicts = FALSE)
@@ -49,6 +59,8 @@ library(tibble, warn.conflicts = FALSE)
 
 data("mtcars")
 ```
+
+:::
 
 You can visualise the dataset as follows.
 ```{r example-heatmap}
